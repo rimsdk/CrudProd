@@ -41,7 +41,26 @@ public class ProduitService {
         System.out.println("Erreur : Produit non trouvé.");
         return null;
     }
+    // Mise à jour
+    public void mettreAJourProduit(Produit produitAMettreAJour) {
+        if (!produits.contains(produitAMettreAJour)) {
+            System.out.println("Erreur : Le produit à mettre à jour n'existe pas.");
+            return;
+        }
 
+        if (!estUnique(produitAMettreAJour)) {
+            System.out.println("Erreur : Un autre produit avec le même ID ou nom existe déjà.");
+            return;
+        }
+
+        if (!sontDonneesValides(produitAMettreAJour)) {
+            System.out.println("Erreur : Le prix et la quantité du produit doivent être positifs.");
+            return;
+        }
+
+        int index = produits.indexOf(produitAMettreAJour);
+        produits.set(index, produitAMettreAJour);
+    }
 
 
        // Vérifier l'unicité
