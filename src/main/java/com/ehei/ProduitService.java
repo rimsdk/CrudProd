@@ -22,6 +22,27 @@ public class ProduitService {
 
         produits.add(nouveauProduit);
     }
+// Suppression
+    public void supprimerProduit(Long id) {
+        Produit produitASupprimer = lireProduitParId(id);
+        if (produitASupprimer != null) {
+            produits.remove(produitASupprimer);
+        } else {
+            System.out.println("Erreur : Produit non trouvé.");
+        }
+    }
+        // Lecture
+    public Produit lireProduitParId(Long id) {
+        for (Produit produit : produits) {
+            if (produit.getId().equals(id)) {
+                return produit;
+            }
+        }
+        System.out.println("Erreur : Produit non trouvé.");
+        return null;
+    }
+
+
 
        // Vérifier l'unicité
     private boolean estUnique(Produit produit) {
