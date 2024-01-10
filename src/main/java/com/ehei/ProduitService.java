@@ -22,6 +22,17 @@ public class ProduitService {
 
         produits.add(nouveauProduit);
     }
+// Suppression
+    public void supprimerProduit(Long id) {
+        Produit produitASupprimer = lireProduitParId(id);
+        if (produitASupprimer != null) {
+            produits.remove(produitASupprimer);
+        } else {
+            System.out.println("Erreur : Produit non trouvé.");
+        }
+    }
+
+
 
        // Vérifier l'unicité
     private boolean estUnique(Produit produit) {
