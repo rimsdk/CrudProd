@@ -31,6 +31,16 @@ public class ProduitService {
             System.out.println("Erreur : Produit non trouvé.");
         }
     }
+        // Lecture
+    public Produit lireProduitParId(Long id) {
+        for (Produit produit : produits) {
+            if (produit.getId().equals(id)) {
+                return produit;
+            }
+        }
+        System.out.println("Erreur : Produit non trouvé.");
+        return null;
+    }
 
 
 
