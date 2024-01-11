@@ -1,12 +1,12 @@
 package com.ehei;
 
 public class Produit {
-    private Long id;
+    private int id;
     private String nom;
     private double prix;
     private int quantite;
     
-    public Produit(Long id, String nom, double prix, int quantite) {
+    public Produit(int id, String nom, double prix, int quantite) {
         this.id = id;
         this.nom = nom;
         this.prix = prix;
@@ -21,5 +21,21 @@ public class Produit {
                 ", quantite=" + quantite +
                 '}';
     }
+	public int getId() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+	public double getPrix() {
+		// TODO Auto-generated method stub
+		return prix;
+	}
+	public int getQuantite() {
+		// TODO Auto-generated method stub
+		return quantite ;
+	}
+	public String getNom() {
+		// TODO Auto-generated method stub
+		return nom;
+	}
 
 }
